@@ -1,0 +1,73 @@
+{
+  "doctype": "DocType",
+  "name": "AI Tool Allowed DocType",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "reference_doctype",
+      "label": "DocType",
+      "fieldtype": "Link",
+      "options": "DocType",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "allow_read",
+      "label": "Read",
+      "fieldtype": "Check",
+      "default": "1"
+    },
+    {
+      "fieldname": "allow_create",
+      "label": "Create",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "allow_update",
+      "label": "Update",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "allow_submit",
+      "label": "Submit",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "allow_cancel",
+      "label": "Cancel",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "allow_delete",
+      "label": "Delete",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "maximum_rows",
+      "label": "Maximum Rows",
+      "fieldtype": "Int",
+      "default": "50"
+    },
+    {
+      "fieldname": "allowed_fields",
+      "label": "Allowed Fields",
+      "fieldtype": "Small Text",
+      "description": "One fieldname per line. Empty means all readable non-password fields."
+    },
+    {
+      "fieldname": "blocked_fields",
+      "label": "Blocked Fields",
+      "fieldtype": "Small Text",
+      "description": "One fieldname per line."
+    }
+  ],
+  "istable": 1,
+  "editable_grid": 1
+}

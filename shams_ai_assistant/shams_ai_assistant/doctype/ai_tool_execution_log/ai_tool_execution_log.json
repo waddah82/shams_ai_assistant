@@ -1,0 +1,85 @@
+{
+  "doctype": "DocType",
+  "name": "AI Tool Execution Log",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "user",
+      "label": "User",
+      "fieldtype": "Link",
+      "options": "User",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "conversation",
+      "label": "Conversation",
+      "fieldtype": "Link",
+      "options": "AI Conversation"
+    },
+    {
+      "fieldname": "source",
+      "label": "Source",
+      "fieldtype": "Select",
+      "options": "Local\nApplication MCP\nNative MCP",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "tool_name",
+      "label": "Tool Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "mcp_server",
+      "label": "MCP Server",
+      "fieldtype": "Link",
+      "options": "AI MCP Server"
+    },
+    {
+      "fieldname": "arguments",
+      "label": "Arguments",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "result",
+      "label": "Result",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Success\nFailed\nApproval Required",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "duration_ms",
+      "label": "Duration (ms)",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "error",
+      "label": "Error",
+      "fieldtype": "Long Text"
+    }
+  ],
+  "autoname": "hash",
+  "track_changes": 0,
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC"
+}

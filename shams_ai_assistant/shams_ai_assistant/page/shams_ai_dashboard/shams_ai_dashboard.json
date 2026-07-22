@@ -1,0 +1,13 @@
+{
+  "doctype": "Page",
+  "name": "shams-ai-dashboard",
+  "module": "Shams AI Assistant",
+  "page_name": "shams-ai-dashboard",
+  "title": "Shams AI Dashboard",
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ],
+  "standard": "Yes"
+}

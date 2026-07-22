@@ -1,0 +1,176 @@
+{
+  "doctype": "DocType",
+  "name": "AI Provider",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "is_submittable": 0,
+  "editable_grid": 1,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "provider_name",
+      "label": "Provider Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "provider_type",
+      "label": "Provider Type",
+      "fieldtype": "Select",
+      "reqd": 1,
+      "in_list_view": 1,
+      "options": "OpenAI\nAnthropic\nGemini\nMistral\nOllama\nOpenRouter\nAzure OpenAI\nOpenAI Compatible\nCustom"
+    },
+    {
+      "fieldname": "enabled",
+      "label": "Enabled",
+      "fieldtype": "Check",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_default",
+      "label": "Default Provider",
+      "fieldtype": "Check",
+      "default": "0",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "section_api",
+      "label": "Connection",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "base_url",
+      "label": "Base URL",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "api_key",
+      "label": "API Key",
+      "fieldtype": "Password"
+    },
+    {
+      "fieldname": "api_version",
+      "label": "API Version",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "column_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "default_model",
+      "label": "Default Model",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "request_timeout",
+      "label": "Request Timeout (seconds)",
+      "fieldtype": "Int",
+      "default": "120"
+    },
+    {
+      "fieldname": "verify_ssl",
+      "label": "Verify SSL",
+      "fieldtype": "Check",
+      "default": "1"
+    },
+    {
+      "fieldname": "section_generation",
+      "label": "Generation",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "temperature",
+      "label": "Temperature",
+      "fieldtype": "Float",
+      "default": "0.2"
+    },
+    {
+      "fieldname": "max_output_tokens",
+      "label": "Max Output Tokens",
+      "fieldtype": "Int",
+      "default": "2048"
+    },
+    {
+      "fieldname": "section_mcp_mode",
+      "label": "Tool Integration",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "tool_mode",
+      "label": "Tool Mode",
+      "fieldtype": "Select",
+      "options": "Auto\nDisabled\nLocal Tools\nApplication MCP\nNative MCP\nLocal + Application MCP\nLocal + Native MCP",
+      "default": "Auto",
+      "description": "Select local DocType tools, application-managed MCP, provider-native MCP, a combined mode, or automatic capability-based selection."
+    },
+    {
+      "fieldname": "native_mcp_source",
+      "label": "Native MCP Source",
+      "fieldtype": "Select",
+      "options": "Custom MCP Server\nProvider Connector",
+      "default": "Custom MCP Server",
+      "depends_on": "eval:['Native MCP','Local + Native MCP','Auto'].includes(doc.tool_mode)"
+    },
+    {
+      "fieldname": "column_mcp",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "connector_id",
+      "label": "Provider Connector ID",
+      "fieldtype": "Data",
+      "depends_on": "eval:doc.native_mcp_source=='Provider Connector'",
+      "description": "Provider-specific connector ID, for example connector_gmail. Custom ERPNext MCP servers should use Custom MCP Server."
+    },
+    {
+      "fieldname": "native_mcp_fallback",
+      "label": "Fallback to Application Managed MCP",
+      "fieldtype": "Check",
+      "default": "1",
+      "description": "If native MCP is unsupported or cannot be used safely, automatically use the application's MCP client."
+    },
+    {
+      "fieldname": "section_prompt",
+      "label": "Instructions",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "auto_update_system_prompt",
+      "label": "Automatically Update System Prompt",
+      "fieldtype": "Check",
+      "default": "1",
+      "description": "Regenerate the standard system prompt whenever Tool Mode or Native MCP Source changes. Disable this to maintain a fully custom prompt."
+    },
+    {
+      "fieldname": "system_prompt",
+      "label": "System Prompt",
+      "fieldtype": "Long Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1,
+      "share": 1,
+      "print": 1,
+      "email": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "autoname": "field:provider_name",
+  "title_field": "provider_name"
+}

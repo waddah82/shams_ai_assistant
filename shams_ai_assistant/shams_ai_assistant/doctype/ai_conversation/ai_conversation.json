@@ -1,0 +1,68 @@
+{
+  "doctype": "DocType",
+  "name": "AI Conversation",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "is_submittable": 0,
+  "editable_grid": 1,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "title",
+      "label": "Title",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "provider",
+      "label": "Provider",
+      "fieldtype": "Link",
+      "options": "AI Provider",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "model",
+      "label": "Model",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "last_activity",
+      "label": "Last Activity",
+      "fieldtype": "Datetime",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "route_context",
+      "label": "Route Context",
+      "fieldtype": "Code",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "archived",
+      "label": "Archived",
+      "fieldtype": "Check",
+      "default": "0"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "All",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 0,
+      "report": 0,
+      "share": 0,
+      "print": 0,
+      "email": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "autoname": "hash",
+  "title_field": "title"
+}

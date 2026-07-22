@@ -1,0 +1,19 @@
+{
+  "doctype": "DocType",
+  "name": "AI Tool Role",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "role",
+      "label": "Role",
+      "fieldtype": "Link",
+      "options": "Role",
+      "reqd": 1,
+      "in_list_view": 1
+    }
+  ],
+  "istable": 1,
+  "editable_grid": 1
+}

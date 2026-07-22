@@ -1,0 +1,162 @@
+{
+  "doctype": "DocType",
+  "name": "AI Assistant Settings",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "issingle": 1,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "quota_section",
+    "default_daily_token_limit",
+    "default_monthly_token_limit",
+    "quota_warning_percent",
+    "column_break_quota",
+    "max_history_messages",
+    "max_tool_steps",
+    "mcp_tools_cache_minutes",
+    "enable_tool_audit",
+    "fallback_policy",
+    "default_tool_mode",
+    "enable_mcp_tools",
+    "enable_local_tools",
+    "tooling_section",
+    "optimization_section",
+    "enable_tool_filtering",
+    "max_tools_per_request",
+    "trim_tool_descriptions",
+    "max_tool_result_chars"
+  ],
+  "fields": [
+    {
+      "fieldname": "quota_section",
+      "fieldtype": "Section Break",
+      "label": "Token Quotas"
+    },
+    {
+      "fieldname": "default_daily_token_limit",
+      "fieldtype": "Int",
+      "label": "Default Daily Token Limit",
+      "default": "100000",
+      "description": "0 = unlimited. Can be overridden per user."
+    },
+    {
+      "fieldname": "default_monthly_token_limit",
+      "fieldtype": "Int",
+      "label": "Default Monthly Token Limit",
+      "default": "2000000",
+      "description": "0 = unlimited. Can be overridden per user."
+    },
+    {
+      "fieldname": "quota_warning_percent",
+      "fieldtype": "Int",
+      "label": "Warning at Percent",
+      "default": "80"
+    },
+    {
+      "fieldname": "column_break_quota",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "max_history_messages",
+      "fieldtype": "Int",
+      "label": "Maximum History Messages",
+      "default": "20",
+      "description": "Limits conversation history sent to the provider."
+    },
+    {
+      "fieldname": "max_tool_steps",
+      "fieldtype": "Int",
+      "label": "Maximum Tool Steps",
+      "default": "6"
+    },
+    {
+      "fieldname": "mcp_tools_cache_minutes",
+      "fieldtype": "Int",
+      "label": "MCP Tools Cache (Minutes)",
+      "default": "30"
+    },
+    {
+      "fieldname": "tooling_section",
+      "fieldtype": "Section Break",
+      "label": "Tooling Defaults"
+    },
+    {
+      "fieldname": "enable_local_tools",
+      "fieldtype": "Check",
+      "label": "Enable Local DocType Tools",
+      "default": "1"
+    },
+    {
+      "fieldname": "enable_mcp_tools",
+      "fieldtype": "Check",
+      "label": "Enable MCP Tools",
+      "default": "1"
+    },
+    {
+      "fieldname": "default_tool_mode",
+      "fieldtype": "Select",
+      "label": "Default Tool Mode",
+      "options": "Auto\nDisabled\nLocal Tools\nApplication MCP\nNative MCP\nLocal + Application MCP\nLocal + Native MCP",
+      "default": "Auto"
+    },
+    {
+      "fieldname": "fallback_policy",
+      "fieldtype": "Select",
+      "label": "Fallback Policy",
+      "options": "No Fallback\nNative MCP to Application MCP\nMCP to Local Tools\nNative MCP to Application MCP to Local Tools",
+      "default": "Native MCP to Application MCP"
+    },
+    {
+      "fieldname": "enable_tool_audit",
+      "fieldtype": "Check",
+      "label": "Enable Tool Audit",
+      "default": "1"
+    },
+    {
+      "fieldname": "optimization_section",
+      "fieldtype": "Section Break",
+      "label": "Token Optimization"
+    },
+    {
+      "fieldname": "enable_tool_filtering",
+      "fieldtype": "Check",
+      "label": "Filter Tools by User Request",
+      "default": "1"
+    },
+    {
+      "fieldname": "max_tools_per_request",
+      "fieldtype": "Int",
+      "label": "Maximum Tools Per Request",
+      "default": "12"
+    },
+    {
+      "fieldname": "trim_tool_descriptions",
+      "fieldtype": "Check",
+      "label": "Trim Tool Descriptions",
+      "default": "1"
+    },
+    {
+      "fieldname": "max_tool_result_chars",
+      "fieldtype": "Int",
+      "label": "Maximum Tool Result Characters",
+      "default": "30000"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "export": 0,
+      "report": 0,
+      "share": 0,
+      "print": 0,
+      "email": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

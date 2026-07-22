@@ -1,0 +1,2 @@
+# Standard AI tools are synchronized after model sync by the after_migrate hook.
+# Do not seed new DocType records from a pre-model-sync patch.

@@ -1,0 +1,85 @@
+{
+  "doctype": "Workspace",
+  "name": "Shams AI Assistant",
+  "label": "Shams AI Assistant",
+  "title": "Shams AI Assistant",
+  "module": "Shams AI Assistant",
+  "public": 1,
+  "icon": "robot",
+  "content": "[{\"id\":\"header_ai\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Shams AI Assistant</span>\",\"col\":12}},{\"id\":\"shortcut_dashboard\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Dashboard\",\"col\":3}},{\"id\":\"card_settings\",\"type\":\"card\",\"data\":{\"card_name\":\"AI Configuration\",\"col\":4}},{\"id\":\"card_tools\",\"type\":\"card\",\"data\":{\"card_name\":\"AI Tools\",\"col\":4}},{\"id\":\"card_monitoring\",\"type\":\"card\",\"data\":{\"card_name\":\"Monitoring\",\"col\":4}}]",
+  "shortcuts": [
+    {
+      "label": "AI Dashboard",
+      "type": "Page",
+      "link_to": "shams-ai-dashboard",
+      "color": "Blue"
+    }
+  ],
+  "links": [
+    {
+      "label": "AI Configuration",
+      "type": "Card Break"
+    },
+    {
+      "label": "AI Providers",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Provider"
+    },
+    {
+      "label": "Assistant Settings",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Assistant Settings"
+    },
+    {
+      "label": "MCP Servers",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI MCP Server"
+    },
+    {
+      "label": "AI Tools",
+      "type": "Card Break"
+    },
+    {
+      "label": "Tools",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Tool"
+    },
+    {
+      "label": "Tool Execution Logs",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Tool Execution Log"
+    },
+    {
+      "label": "Monitoring",
+      "type": "Card Break"
+    },
+    {
+      "label": "User Token Quotas",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI User Quota"
+    },
+    {
+      "label": "Token Usage",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Token Usage"
+    },
+    {
+      "label": "Conversations",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "AI Conversation"
+    }
+  ],
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ]
+}

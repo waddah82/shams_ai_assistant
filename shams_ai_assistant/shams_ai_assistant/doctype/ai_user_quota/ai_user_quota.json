@@ -1,0 +1,74 @@
+{
+  "doctype": "DocType",
+  "name": "AI User Quota",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "autoname": "field:user",
+  "title_field": "user",
+  "fields": [
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "daily_token_limit",
+      "fieldtype": "Int",
+      "label": "Daily Token Limit",
+      "description": "Leave 0 to use the global default."
+    },
+    {
+      "fieldname": "monthly_token_limit",
+      "fieldtype": "Int",
+      "label": "Monthly Token Limit",
+      "description": "Leave 0 to use the global default."
+    },
+    {
+      "fieldname": "unlimited",
+      "fieldtype": "Check",
+      "label": "Unlimited",
+      "default": "0",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "block_when_exceeded",
+      "fieldtype": "Check",
+      "label": "Block When Exceeded",
+      "default": "1"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1,
+      "share": 0,
+      "print": 0,
+      "email": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

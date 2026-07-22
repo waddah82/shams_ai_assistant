@@ -1,0 +1,143 @@
+{
+  "doctype": "DocType",
+  "name": "AI Tool",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "tool_name",
+      "label": "Tool Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "tool_label",
+      "label": "Tool Label",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text",
+      "reqd": 1
+    },
+    {
+      "fieldname": "enabled",
+      "label": "Enabled",
+      "fieldtype": "Check",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_standard",
+      "label": "Standard Tool",
+      "fieldtype": "Check",
+      "default": "0",
+      "read_only": 1
+    },
+    {
+      "fieldname": "category",
+      "label": "Category",
+      "fieldtype": "Select",
+      "options": "Documents\nMetadata\nReports\nWorkflow\nActivity\nSystem",
+      "default": "Documents",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "operation",
+      "label": "Operation",
+      "fieldtype": "Select",
+      "options": "Read\nCreate\nUpdate\nSubmit\nCancel\nDelete\nExecute",
+      "default": "Read",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "handler_method",
+      "label": "Handler Method",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "read_only",
+      "label": "Read Only",
+      "fieldtype": "Check",
+      "default": "1"
+    },
+    {
+      "fieldname": "requires_confirmation",
+      "label": "Requires Confirmation",
+      "fieldtype": "Check",
+      "default": "0"
+    },
+    {
+      "fieldname": "apply_user_permissions",
+      "label": "Apply User Permissions",
+      "fieldtype": "Check",
+      "default": "1"
+    },
+    {
+      "fieldname": "priority",
+      "label": "Priority",
+      "fieldtype": "Int",
+      "default": "100"
+    },
+    {
+      "fieldname": "maximum_rows",
+      "label": "Maximum Rows",
+      "fieldtype": "Int",
+      "default": "50"
+    },
+    {
+      "fieldname": "parameters_section",
+      "label": "Parameters",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "parameters",
+      "label": "Parameters",
+      "fieldtype": "Table",
+      "options": "AI Tool Parameter"
+    },
+    {
+      "fieldname": "access_section",
+      "label": "Access Control",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "allowed_roles",
+      "label": "Allowed Roles",
+      "fieldtype": "Table",
+      "options": "AI Tool Role"
+    },
+    {
+      "fieldname": "allowed_doctypes",
+      "label": "Allowed DocTypes",
+      "fieldtype": "Table",
+      "options": "AI Tool Allowed DocType"
+    }
+  ],
+  "autoname": "field:tool_name",
+  "title_field": "tool_label",
+  "track_changes": 1,
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1,
+      "share": 1,
+      "print": 1,
+      "email": 1
+    }
+  ],
+  "sort_field": "priority",
+  "sort_order": "ASC"
+}

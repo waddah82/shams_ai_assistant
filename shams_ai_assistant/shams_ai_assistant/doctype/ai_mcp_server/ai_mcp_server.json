@@ -1,0 +1,33 @@
+{
+  "doctype": "DocType",
+  "name": "AI MCP Server",
+  "module": "Shams AI Assistant",
+  "custom": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "autoname": "field:server_name",
+  "title_field": "server_name",
+  "fields": [
+    {"fieldname":"server_name","label":"Server Name","fieldtype":"Data","reqd":1,"in_list_view":1},
+    {"fieldname":"enabled","label":"Enabled","fieldtype":"Check","default":"1","in_list_view":1},
+    {"fieldname":"is_default","label":"Default Server","fieldtype":"Check","default":"0","in_list_view":1},
+    {"fieldname":"transport","label":"Transport","fieldtype":"Select","options":"Streamable HTTP\nHTTP JSON-RPC\nSSE","default":"Streamable HTTP","reqd":1},
+    {"fieldname":"server_url","label":"Server URL","fieldtype":"Data","reqd":1},
+    {"fieldname":"section_auth","label":"Authentication","fieldtype":"Section Break"},
+    {"fieldname":"authentication_type","label":"Authentication Type","fieldtype":"Select","options":"None\nBearer Token\nFrappe Token\nBasic Auth\nCustom Header","default":"None"},
+    {"fieldname":"authorization_value","label":"Authorization Value","fieldtype":"Password"},
+    {"fieldname":"custom_header_name","label":"Custom Header Name","fieldtype":"Data","depends_on":"eval:doc.authentication_type=='Custom Header'"},
+    {"fieldname":"column_connection","fieldtype":"Column Break"},
+    {"fieldname":"request_timeout","label":"Request Timeout (seconds)","fieldtype":"Int","default":"60"},
+    {"fieldname":"verify_ssl","label":"Verify SSL","fieldtype":"Check","default":"1"},
+    {"fieldname":"section_tools","label":"Tools","fieldtype":"Section Break"},
+    {"fieldname":"allowed_tools","label":"Allowed Tools","fieldtype":"Small Text","description":"One tool name per line. Leave empty to allow all tools."},
+    {"fieldname":"require_approval","label":"Require Approval for Write Tools","fieldtype":"Check","default":"1"},
+    {"fieldname":"tool_name_patterns","label":"Write/Delete Tool Patterns","fieldtype":"Small Text","default":"create\nupdate\nset\nsave\nsubmit\ncancel\ndelete\nremove\ninsert"}
+  ],
+  "permissions": [
+    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1,"export":1,"report":1,"share":1,"print":1,"email":1}
+  ],
+  "sort_field":"modified",
+  "sort_order":"DESC"
+}
