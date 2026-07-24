@@ -21,7 +21,7 @@
       "fieldtype": "Select",
       "reqd": 1,
       "in_list_view": 1,
-      "options": "OpenAI\nAnthropic\nGemini\nMistral\nOllama\nOpenRouter\nAzure OpenAI\nOpenAI Compatible\nCustom"
+      "options": "OpenAI\nAnthropic\nGemini\nMistral\nOllama\nOpenRouter\nAzure OpenAI\nOpenAI Compatible\nOpenCode\nCustom"
     },
     {
       "fieldname": "enabled",
