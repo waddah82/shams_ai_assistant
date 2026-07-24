@@ -62,6 +62,13 @@ STANDARD_PROVIDERS = [
         "base_url": "",
         "default_model": "model-name",
     },
+    {
+        "provider_name": "OpenCode",
+        "provider_type": "OpenCode",
+        "base_url": "http://localhost:4096",
+        "default_model": "opencode/big-pickle",
+        "tool_mode": "Disabled",
+    },
 ]
 
 
