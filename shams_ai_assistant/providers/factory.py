@@ -17,4 +17,6 @@ def get_provider(config):
         return OllamaProvider(config)
     if kind == "mistral":
         return MistralProvider(config)
+    if kind == "opencode":
+        return OpenCodeProvider(config)
     raise ValueError(f"Unsupported provider type: {config.provider_type}")
